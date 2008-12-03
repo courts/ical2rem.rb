@@ -1,0 +1,80 @@
+Author::     Patrick Hof <patrickhof@web.de>
+Copyright::  Copyright (C) 2008 Patrick Hof
+License::    GPLv3
+Download::   git clone git://github.com/courts/ical2rem.rb.git
+
+<tt>ical2rem.rb</tt> is based on the Perl program <tt>ical2rem.pl</tt> by Justin B. 
+Alcorn (http://wiki.43folders.com/index.php/ICal2Rem). It converts an
+_ICalendar_ file's +VEVENT+ and +VTODO+ components to the _Remind_ syntax. You
+should be able to use it as a drop-in replacement for <tt>ical2rem.pl</tt> with
+only minor modifications.
+
+= Installation
+
+<tt>ical2rem.rb</tt> requires vPim (http://vpim.rubyforge.org). You can install
+it with ruby-gems:
+
+  # sudo gem install vpim (may require root privilege)
+
+Besides that, no further installation steps are required.
+
+
+= Usage
+
+You can get usage information by running <tt>ical2rem.rb</tt> with the
+<tt>-h</tt> switch:
+
+  Usage: ./ical2rem.rb [options] < input-file [> output-file]
+          --label LABEL                Calendar name
+          --lead-time LEAD             Advance days to start reminders
+          --heading HEADING            Define a priority for static entries
+      -t, --todos                      Process TODOs?
+      -c, --config-file FILE           Use config file FILE (default: .ical2rem.yaml)
+      -d, --debug                      Show debug info
+      -h, --help                       Show this help
+
+The configuration file (default <tt>.ical2rem.yaml</tt>) further explains the
+options you can give to it.
+
+<tt>ical2rem.rb</tt> will read any Icalendar file parseable by Vpim from
+<tt>STDIN</tt> and print its output to <tt>STDOUT</tt>.
+
+
+= Overview
+
+<tt>ical2rem.rb</tt> was mainly written because <tt>ICal::Parser</tt>, the library
+<tt>ical2rem.pl</tt> bailed out on my 64bit Ubuntu. Also, <tt>ical2rem.pl</tt>
+did not support showing starting and ending times of events.
+
+==== Events
+
+<tt>ical2rem.rb</tt> parses ICalendar <tt>VEVENTs</tt> in a similar way to
+<tt>ical2rem.pl</tt>, but it will also recognize <tt>TIME-DATE</tt> values in
+<tt>DTSTART</tt> and <tt>DTEND</tt> and add them to the output by using remind's
+<tt>DURATION</tt> property.
+
+==== ToDos 
+
+Like <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> also parses ICalendar
+<tt>VTODOs</tt>. Unlike <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> will not
+parse them by default, parsing has to be enabled with the command line switch
+'-t'. At the moment, the same simple approach to parsing as in
+<tt>ical2rem.pl</tt> is used. This may improve in future versions.
+
+== Bug Reports / Feature Requests / Patches
+
+Please send bug reports to my e-mail address given above. Adding 
+<tt>[BUG ical2rem.rb]</tt> to the subject will greatly increase your chance of not
+getting stuck in my spam filter. The same goes for feature requests, including
+<tt>[FEATURE ical2rem.rb]</tt> would be nice.
+
+For patches, please send them as git patches formatted with 
+<tt>git-format-patch -n</tt> if possible. Make sure they commit cleanly against
+the current <tt>master</tt> branch.
+
+Otherwise, at least include <tt>[PATCH ical2rem.rb]</tt> in your subject.
+
+== Thanks
+
+- Justin B. Alcorn (http://www.jalcorn.net/) for writing <tt>ical2rem.pl</tt>
+- Sam Roberts for vPim (http://vpim.rubyforge.org)

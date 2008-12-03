@@ -1,0 +1,23 @@
+########################################
+##                                    ##
+## Configuration file for ical2rem.rb ##
+##                                    ##
+########################################
+
+# Default configuration values are given as commented out values
+
+--- 
+## Show debug info
+# :debug: false
+
+## Calendar name, e.g. 'Calendar'
+# :label: ""
+
+## Advance days to start reminders
+#:lead: 3
+
+## Define a priority for static entries, e.g. 'PRIORITY 6500'
+# :heading: ""
+
+## Process TODOs
+# :todos: false
