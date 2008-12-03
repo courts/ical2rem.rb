@@ -5,9 +5,9 @@ Download::   git clone git://github.com/courts/ical2rem.rb.git
 
 <tt>ical2rem.rb</tt> is based on the Perl program <tt>ical2rem.pl</tt> by Justin B. 
 Alcorn (http://wiki.43folders.com/index.php/ICal2Rem). It converts an
-_ICalendar_ file's +VEVENT+ and +VTODO+ components to the _Remind_ syntax. You
-should be able to use it as a drop-in replacement for <tt>ical2rem.pl</tt> with
-only minor modifications.
+<em>iCalendar</em> file's <tt>VEVENT</tt> and <tt>VTODO</tt> components to the
+<em>Remind</em> syntax. You should be able to use it as a drop-in replacement
+for <tt>ical2rem.pl</tt> with only minor modifications.
 
 = Installation
 
@@ -36,26 +36,27 @@ You can get usage information by running <tt>ical2rem.rb</tt> with the
 The configuration file (default <tt>.ical2rem.yaml</tt>) further explains the
 options you can give to it.
 
-<tt>ical2rem.rb</tt> will read any Icalendar file parseable by Vpim from
+<tt>ical2rem.rb</tt> will read any iCalendar file parseable by Vpim from
 <tt>STDIN</tt> and print its output to <tt>STDOUT</tt>.
 
 
 = Overview
 
-<tt>ical2rem.rb</tt> was mainly written because <tt>ICal::Parser</tt>, the library
-<tt>ical2rem.pl</tt> bailed out on my 64bit Ubuntu. Also, <tt>ical2rem.pl</tt>
-did not support showing starting and ending times of events.
+<tt>ical2rem.rb</tt> was mainly written because <tt>ICal::Parser</tt>, the iCal
+parsing library <tt>ical2rem.pl</tt> uses, bailed out on my 64bit Ubuntu. Also,
+<tt>ical2rem.pl</tt> does not support showing starting and ending times of
+events.
 
 ==== Events
 
-<tt>ical2rem.rb</tt> parses ICalendar <tt>VEVENTs</tt> in a similar way to
+<tt>ical2rem.rb</tt> parses iCalendar <tt>VEVENTs</tt> in a similar way to
 <tt>ical2rem.pl</tt>, but it will also recognize <tt>TIME-DATE</tt> values in
 <tt>DTSTART</tt> and <tt>DTEND</tt> and add them to the output by using remind's
 <tt>DURATION</tt> property.
 
 ==== ToDos 
 
-Like <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> also parses ICalendar
+Like <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> also parses iCalendar
 <tt>VTODOs</tt>. Unlike <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> will not
 parse them by default, parsing has to be enabled with the command line switch
 '-t'. At the moment, the same simple approach to parsing as in
