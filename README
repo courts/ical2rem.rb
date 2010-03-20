@@ -11,10 +11,10 @@ for <tt>ical2rem.pl</tt> with only minor modifications.
 
 = Installation
 
-<tt>ical2rem.rb</tt> requires vPim (http://vpim.rubyforge.org). You can install
-it with ruby-gems:
+<tt>ical2rem.rb</tt> requires RiCal (http://ri-cal.rubyforge.org/) You can
+install it with ruby-gems:
 
-  # sudo gem install vpim (may require root privilege)
+  # (sudo) gem install ri_cal
 
 Besides that, no further installation steps are required.
 
@@ -36,16 +36,19 @@ You can get usage information by running <tt>ical2rem.rb</tt> with the
 The configuration file (default <tt>.ical2rem.yaml</tt>) further explains the
 options you can give to it.
 
-<tt>ical2rem.rb</tt> will read any iCalendar file parseable by Vpim from
+<tt>ical2rem.rb</tt> will read any iCalendar file parseable by RiCal from
 <tt>STDIN</tt> and print its output to <tt>STDOUT</tt>.
 
 
 = Overview
 
 <tt>ical2rem.rb</tt> was mainly written because <tt>ICal::Parser</tt>, the iCal
-parsing library <tt>ical2rem.pl</tt> uses, bailed out on my 64bit Ubuntu. Also,
-<tt>ical2rem.pl</tt> does not support showing starting and ending times of
-events.
+parsing library <tt>ical2rem.pl</tt> uses, bailed out on my 64bit Ubuntu I was
+using at the time. Also, <tt>ical2rem.pl</tt> does not support showing starting
+and ending times of events.
+
+The first version used Sam Roberts' vPim, but since it didn't work well with
+Ruby 1.9 for some time, I decided to switch to RiCal.
 
 ==== Events
 
@@ -78,4 +81,5 @@ Otherwise, at least include <tt>[PATCH ical2rem.rb]</tt> in your subject.
 == Thanks
 
 - Justin B. Alcorn (http://www.jalcorn.net/) for writing <tt>ical2rem.pl</tt>
+- Rick DeNatale for RiCal (http://ri-cal.rubyforge.org)
 - Sam Roberts for vPim (http://vpim.rubyforge.org)

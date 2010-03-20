@@ -15,13 +15,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'vpim/icalendar'
+require 'ri_cal'
 require 'optparse'
 require 'ostruct'
 require 'time'
 require 'yaml'
 
-include Vpim
+include RiCal
 
 # Main class in <tt>ical2rem.rb</tt>, will get initialized if it is run from the
 # command line.
@@ -105,26 +105,10 @@ class Ical2Rem
   # Will abort the program otherwise.
   def load(cal_text)
     begin
-      Icalendar.decode(cal_text).first
+      RiCal.parse_string(cal_text).first
     rescue InvalidEncodingError => e
       $stderr.write "Could not parse ICalendar, aborting.\n"
       exit 1
-    end
-  end
-
-
-  # Checks if the event +event+ has a DATE-TIME +DTSTART+ value instead of DATE
-  # (e.g. <em>20081112T070000Z</em> instead of <em>20081112</em>).  If this is the case, it
-  # returns +true+, otherwise, it returns +false+.
-  #
-  # +DTEND+ does not need to be checked as per RFC, if +DTSTART+ is only a DATE
-  # value, +DTEND+ _must_ be a DATE value, too. So if +DTEND+ has any time
-  # given, it is ignored.
-  def dtstart_is_datetime?(event)
-    if event.properties.field("DTSTART").value =~ /^\d{8}$/
-      return false
-    else
-      return true 
     end
   end
 
@@ -139,6 +123,28 @@ class Ical2Rem
     end
   end
 
+  # Returns the duration of an event
+  def duration(event)
+    return 0 unless event.dtstart and event.dtend
+    # XXX Ugly hack to subtract DateTime objects, but it works..
+    if event.dtstart.class == DateTime && event.dtend.class == DateTime
+      days = (event.dtend.to_date - event.dtstart.to_date).to_i * 24 * 60 * 60
+      hours = (event.dtend.to_time - event.dtstart.to_time).to_i
+      d = days + hours 
+    # Date object subtractions gives us days, so we need to multiply to get
+    # seconds
+    elsif event.dtstart.class == Date && event.dtend.class == Date
+      d = (event.dtend - event.dtstart).to_i * 24 * 60 * 60
+    else
+      raise "Error. dtstart class: #{event.dtstart.class}, dtend class: #{event.dtend.class}"
+    end
+    # Check for a negative duration, which would mean dtstart is after dtend.
+    if d >= 0
+      return d
+    else
+      raise "Error: negative duration #{d}"
+    end
+  end
 
   # Converts the events of _ICalendar_ +cal+ to _Remind_ syntax, writing it to +STDOUT+.
   def events_to_remind(cal)
@@ -150,42 +156,30 @@ class Ical2Rem
     end
 
     # Now, produce an entry for every event in the calendar
-    cal.events do |event|
-      vstart = event.dtstart.getlocal
-      vend = event.dtend.getlocal
+    cal.events.each do |event|
+      # XXX Object conversion is expensive, is there no better way?
+      vstart = event.dtstart.to_time.getlocal
+      vend = event.dtend.to_time.getlocal
+      duration = duration(event)
 
       # The starting date, e.g.
       # REM Jan 01 2008
       print "REM #{vstart.strftime("%b")} #{vstart.day} #{vstart.year}"
 
       # Check if we need to print an ending date with UNTIL.
-      # We print an UNTIL if:
-      # - The starting and ending date are different AND
-      #   - Either starting and ending are DATE-TIME objects OR
-      #   - The end date is not the start date plus one. We do this by simply
-      #     checking if the duration is bigger than 24 hours. 
-      #
-      # The latter is due to the fact that in the Icalendar RFC 2445 the DTEND
-      # value of a VEVENT is specified to be non-inclusive. Most .ics file
-      # producing calendars interpret this as meaning that if we want to have an
-      # all-day event on e.g.  Jan 1st 2008, we need to write this as
-      #
-      # DTSTART:20080101
-      # DTEND:20080102
-      #
-      # There is a controversy if this interpretation is right, see e.g. 
-      #
-      # http://www.bedework.org/trac/bedework/wiki/Bedework/DevDocs/DtstartEndNotes
-      is_datetime = dtstart_is_datetime?(event)
-      if not same_day?(vstart, vend) and (is_datetime or (event.duration > 86400))
-        print " UNTIL #{vend.strftime("%b")} #{vend.day} #{vend.year} *1"
+      is_datetime = true if event.dtstart.class == DateTime
+      if event.bounded? && (event.occurrences.length > 1)
+        last = event.occurrences.last.dtend
+        if not same_day?(vstart, last)
+          print " UNTIL #{last.strftime("%b")} #{last.day} #{vend.year} *1"
+        end
       end
 
       # If +DTSTART+ is a DATE-TIME value, add an AT clause, e.g.
       # AT 10:00 DURATION 2:0
       if is_datetime
         print " AT #{vstart.strftime("%H:%M")}"
-        print " DURATION #{event.duration / 3600}:#{(event.duration % 3600) / 60}"
+        print " DURATION #{duration / 3600}:#{(duration % 3600) / 60}"
       end
 
       # The advance days to show this entry, e.g.
@@ -215,7 +209,7 @@ class Ical2Rem
       puts "REM #{@options.heading} MSG #{@options.label} ToDos:%\"%\"%"
     end
 
-    cal.todos do |todo|
+    cal.todos.each do |todo|
       # Check for the task already being completed and skip it if true
       if todo.status and todo.status == "COMPLETED"
         next
@@ -224,9 +218,9 @@ class Ical2Rem
         # to +DTSTART+. If both do not exist, set +due+ to now.
         due = Time.now
         if todo.due
-          due = todo.due.getlocal
+          due = todo.due.to_time.getlocal
         elsif todo.dtstart
-          due = todo.dtstart.getlocal
+          due = todo.dtstart.to_time.getlocal
         end
         # If a priority is given (in icalendar syntax from 1-9), convert it to
         # remind syntax (0 - 9999).
