@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
- 
 # Copyright (C) 2008 Patrick Hof
 #
 # This program is free software: you can redistribute it and/or modify
@@ -23,8 +21,7 @@ require 'yaml'
 
 include RiCal
 
-# Main class in <tt>ical2rem.rb</tt>, will get initialized if it is run from the
-# command line.
+# Main class in <tt>ical2rem.rb</tt>.
 class Ical2Rem
 
   # Start the conversion by parsing the command line options and running the
@@ -50,7 +47,7 @@ class Ical2Rem
       :todos => false,
       :dtend_rfc => false,
       :debug => false,
-      :config => ".ical2rem.yaml"
+      :config => File.expand_path(File.join(File.dirname(__FILE__), '..', '.ical2rem.yaml'))
     }
     cl_opts = {}
     opts = OptionParser.new do |opts|
@@ -240,10 +237,4 @@ class Ical2Rem
       end
     end
   end
-
-end
-
-
-if __FILE__ == $0
-  Ical2Rem.new.run
 end

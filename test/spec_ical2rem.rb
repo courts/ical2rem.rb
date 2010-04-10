@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require File.dirname(__FILE__) + '/../ical2rem'
+require File.join(File.dirname(__FILE__), '..', 'lib', 'ical2rem')
 require 'ri_cal'
 require 'ostruct'
 

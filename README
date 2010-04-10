@@ -1,4 +1,4 @@
-Author::     Patrick Hof <patrickhof@web.de>
+Author::     Patrick Hof <courts@offensivethinking.org>
 Copyright::  Copyright (C) 2008 Patrick Hof
 License::    GPLv3
 Download::   git clone git://github.com/courts/ical2rem.rb.git
@@ -7,24 +7,32 @@ Download::   git clone git://github.com/courts/ical2rem.rb.git
 Alcorn (http://wiki.43folders.com/index.php/ICal2Rem). It converts an
 <em>iCalendar</em> file's <tt>VEVENT</tt> and <tt>VTODO</tt> components to the
 <em>Remind</em> syntax. You should be able to use it as a drop-in replacement
-for <tt>ical2rem.pl</tt> with only minor modifications.
+for <tt>ical2rem.pl</tt> with only minor modifications. The command line client
+which comes with ical2rem.rb is called <tt>ical2rem-cli</tt> and can be found in
+the <tt>/bin</tt> directory.
 
 = Installation
 
 <tt>ical2rem.rb</tt> requires RiCal (http://ri-cal.rubyforge.org/) You can
-install it with ruby-gems:
+install it with RubyGems:
 
   # (sudo) gem install ri_cal
+
+<tt>ical2rem.rb</tt> itself has a gemspec file, so you can easily build a gem
+and install it with:
+
+  # gem build ical2rem.rb.gemspec
+  # gem install ical2rem.rb.-x.x.x.gem
 
 Besides that, no further installation steps are required.
 
 
 = Usage
 
-You can get usage information by running <tt>ical2rem.rb</tt> with the
+You can get usage information by running <tt>ical2rem-cli</tt> with the
 <tt>-h</tt> switch:
 
-  Usage: ./ical2rem.rb [options] < input-file [> output-file]
+  Usage: ical2rem-cli [options] < input-file [> output-file]
           --label LABEL                Calendar name
           --lead-time LEAD             Advance days to start reminders
           --heading HEADING            Define a priority for static entries
@@ -34,9 +42,9 @@ You can get usage information by running <tt>ical2rem.rb</tt> with the
       -h, --help                       Show this help
 
 The configuration file (default <tt>.ical2rem.yaml</tt>) further explains the
-options you can give to it.
+options you can supply.
 
-<tt>ical2rem.rb</tt> will read any iCalendar file parseable by RiCal from
+<tt>ical2rem-cli</tt> will read any iCalendar file parseable by RiCal from
 <tt>STDIN</tt> and print its output to <tt>STDOUT</tt>.
 
 
@@ -60,7 +68,7 @@ Ruby 1.9 for some time, I decided to switch to RiCal.
 ==== ToDos 
 
 Like <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> also parses iCalendar
-<tt>VTODOs</tt>. Unlike <tt>ical2rem.pl</tt>, <tt>ical2rem.rb</tt> will not
+<tt>VTODOs</tt>. Unlike <tt>ical2rem.pl</tt>, <tt>ical2rem-cli</tt> will not
 parse them by default, parsing has to be enabled with the command line switch
 '-t'. At the moment, the same simple approach to parsing as in
 <tt>ical2rem.pl</tt> is used. This may improve in future versions.
