@@ -100,6 +100,6 @@ Otherwise, at least include `[PATCH ical2rem.rb]` in your subject.
 Thanks
 ------
 
-*   Justin B. Alcorn (http://www.jalcorn.net/) for writing `ical2rem.pl`
-*   Rick DeNatale for RiCal (http://ri-cal.rubyforge.org)
-*   Sam Roberts for vPim (http://vpim.rubyforge.org)
+*   [Justin B. Alcorn](http://www.jalcorn.net/) for writing `ical2rem.pl`
+*   Rick DeNatale for [RiCal](http://ri-cal.rubyforge.org)
+*   Sam Roberts for [vPim](http://vpim.rubyforge.org)
