@@ -1,0 +1,1054 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: Ical2Rem</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (I)</a> &raquo; 
+    
+    
+    <span class="title">Ical2Rem</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Ical2Rem 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Ical2Rem</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/ical2rem.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>ical2rem.rb converts an <em>iCalendar</em> file's VEVENT and VTODO components to
+Remind syntax.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Author:</h3>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        Patrick Hof
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#duration-instance_method" title="#duration (instance method)">- (Int) <strong>duration</strong>(event) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Returns the duration of an event.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#events_to_remind-instance_method" title="#events_to_remind (instance method)">- (Object) <strong>events_to_remind</strong>(cal) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#load-instance_method" title="#load (instance method)">- (Vpim::Icalendar) <strong>load</strong>(cal_text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Load a calendar text.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parseopts-instance_method" title="#parseopts (instance method)">- (OpenStruct) <strong>parseopts</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Parses the command line options.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run-instance_method" title="#run (instance method)">- (Object) <strong>run</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Start the conversion by parsing the command line options and running the
+events_to_remind() and possibly the todos_to_remind() methods.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#same_day%3F-instance_method" title="#same_day? (instance method)">- (Boolean) <strong>same_day?</strong>(vstart, vend) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Check if two Time objects have the same date.</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#todos_to_remind-instance_method" title="#todos_to_remind (instance method)">- (Object) <strong>todos_to_remind</strong>(cal) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">Converts the ICalendar TODOs to Remind syntax, writing everything to STDOUT.</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="duration-instance_method">
+  
+    - (<tt>Int</tt>) <strong>duration</strong>(event) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the duration of an event.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>RiCal::Component::Event</tt>)</span>
+      
+      
+        <span class='name'>event</span>
+      
+      
+      
+        &mdash;
+        The event to check the duration of
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Int</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        Event duration in seconds
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id duration'>duration</span><span class='lparen'>(</span><span class='id event'>event</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='int'>0</span> <span class='kw'>unless</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span> <span class='kw'>and</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span>
+  <span class='comment'># XXX Ugly hack to subtract DateTime objects, but it works..
+</span>  <span class='kw'>if</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id class'>class</span> <span class='op'>==</span> <span class='const'>DateTime</span> <span class='op'>&amp;&amp;</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id class'>class</span> <span class='op'>==</span> <span class='const'>DateTime</span>
+    <span class='id days'>days</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id to_date'>to_date</span> <span class='op'>-</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id to_date'>to_date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='op'>*</span> <span class='int'>24</span> <span class='op'>*</span> <span class='int'>60</span> <span class='op'>*</span> <span class='int'>60</span>
+    <span class='id hours'>hours</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id to_time'>to_time</span> <span class='op'>-</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id to_time'>to_time</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_i'>to_i</span>
+    <span class='id d'>d</span> <span class='op'>=</span> <span class='id days'>days</span> <span class='op'>+</span> <span class='id hours'>hours</span> 
+  <span class='comment'># Date object subtractions gives us days, so we need to multiply to get
+</span>  <span class='comment'># seconds
+</span>  <span class='kw'>elsif</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id class'>class</span> <span class='op'>==</span> <span class='const'>Date</span> <span class='op'>&amp;&amp;</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id class'>class</span> <span class='op'>==</span> <span class='const'>Date</span>
+    <span class='id d'>d</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span> <span class='op'>-</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='op'>*</span> <span class='int'>24</span> <span class='op'>*</span> <span class='int'>60</span> <span class='op'>*</span> <span class='int'>60</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error. dtstart class: </span><span class='embexpr_beg'>#{</span><span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id class'>class</span><span class='rbrace'>}</span><span class='tstring_content'>, dtend class: </span><span class='embexpr_beg'>#{</span><span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id class'>class</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='comment'># Check for a negative duration, which would mean dtstart is after dtend.
+</span>  <span class='kw'>if</span> <span class='id d'>d</span> <span class='op'>&gt;=</span> <span class='int'>0</span>
+    <span class='kw'>return</span> <span class='id d'>d</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error: negative duration </span><span class='embexpr_beg'>#{</span><span class='id d'>d</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="events_to_remind-instance_method">
+  
+    - (<tt>Object</tt>) <strong>events_to_remind</strong>(cal) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>RiCal::Component::Calendar</tt>)</span>
+      
+      
+        <span class='name'>cal</span>
+      
+      
+      
+        &mdash;
+        the calendar to convert
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 162</span>
+
+<span class='kw'>def</span> <span class='id events_to_remind'>events_to_remind</span><span class='lparen'>(</span><span class='id cal'>cal</span><span class='rparen'>)</span>
+
+  <span class='comment'># The heading of the calendar file, e.g.
+</span>  <span class='comment'># REM MSG Calendar Events:%&quot;%&quot;%
+</span>  <span class='kw'>if</span> <span class='kw'>not</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id heading'>heading</span><span class='period'>.</span><span class='id empty?'>empty?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id label'>label</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REM </span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id heading'>heading</span><span class='rbrace'>}</span><span class='tstring_content'> MSG </span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id label'>label</span><span class='rbrace'>}</span><span class='tstring_content'> Events:%\&quot;%\&quot;%</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Now, produce an entry for every event in the calendar
+</span>  <span class='id cal'>cal</span><span class='period'>.</span><span class='id events'>events</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id event'>event</span><span class='op'>|</span>
+    <span class='comment'># XXX Object conversion is expensive, is there no better way?
+</span>    <span class='id vstart'>vstart</span> <span class='op'>=</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id to_time'>to_time</span><span class='period'>.</span><span class='id getlocal'>getlocal</span>
+    <span class='id vend'>vend</span> <span class='op'>=</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtend'>dtend</span><span class='period'>.</span><span class='id to_time'>to_time</span><span class='period'>.</span><span class='id getlocal'>getlocal</span>
+    <span class='id duration'>duration</span> <span class='op'>=</span> <span class='id duration'>duration</span><span class='lparen'>(</span><span class='id event'>event</span><span class='rparen'>)</span>
+
+    <span class='comment'># The starting date, e.g.
+</span>    <span class='comment'># REM Jan 01 2008
+</span>    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REM </span><span class='embexpr_beg'>#{</span><span class='id vstart'>vstart</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id vstart'>vstart</span><span class='period'>.</span><span class='id day'>day</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id vstart'>vstart</span><span class='period'>.</span><span class='id year'>year</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='comment'># Check if we need to print an ending date with UNTIL.
+</span>    <span class='id is_datetime'>is_datetime</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id event'>event</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id class'>class</span> <span class='op'>==</span> <span class='const'>DateTime</span>
+    <span class='kw'>if</span> <span class='id event'>event</span><span class='period'>.</span><span class='id bounded?'>bounded?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id occurrences'>occurrences</span><span class='period'>.</span><span class='id length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span><span class='rparen'>)</span>
+      <span class='id last'>last</span> <span class='op'>=</span> <span class='id event'>event</span><span class='period'>.</span><span class='id occurrences'>occurrences</span><span class='period'>.</span><span class='id last'>last</span><span class='period'>.</span><span class='id dtend'>dtend</span>
+      <span class='kw'>if</span> <span class='kw'>not</span> <span class='id same_day?'>same_day?</span><span class='lparen'>(</span><span class='id vstart'>vstart</span><span class='comma'>,</span> <span class='id last'>last</span><span class='rparen'>)</span>
+        <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> UNTIL </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id day'>day</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id vend'>vend</span><span class='period'>.</span><span class='id year'>year</span><span class='rbrace'>}</span><span class='tstring_content'> *1</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># If +DTSTART+ is a DATE-TIME value, add an AT clause, e.g.
+</span>    <span class='comment'># AT 10:00 DURATION 2:0
+</span>    <span class='kw'>if</span> <span class='id is_datetime'>is_datetime</span>
+      <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AT </span><span class='embexpr_beg'>#{</span><span class='id vstart'>vstart</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%H:%M</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> DURATION </span><span class='embexpr_beg'>#{</span><span class='id duration'>duration</span> <span class='op'>/</span> <span class='int'>3600</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='lparen'>(</span><span class='id duration'>duration</span> <span class='op'>%</span> <span class='int'>3600</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>60</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># The advance days to show this entry, e.g.
+</span>    <span class='comment'># +3
+</span>    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> +</span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id lead'>lead</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='comment'># The message of the event. If +DTSTART+ is a DATE-TIME object, the
+</span>    <span class='comment'># starting time is also printed by inserting the variable &quot;%3&quot;.
+</span>    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> MSG %a</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>if</span> <span class='id is_datetime'>is_datetime</span>
+      <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> %3</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> %\&quot;</span><span class='embexpr_beg'>#{</span><span class='id event'>event</span><span class='period'>.</span><span class='id summary'>summary</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> 
+
+    <span class='comment'># If a location for the event is given, we add it to the message.
+</span>    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> at </span><span class='embexpr_beg'>#{</span><span class='id event'>event</span><span class='period'>.</span><span class='id location'>location</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id event'>event</span><span class='period'>.</span><span class='id location'>location</span>
+    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\%\&quot;%</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="load-instance_method">
+  
+    - (<tt>Vpim::Icalendar</tt>) <strong>load</strong>(cal_text) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Load a calendar text. If the text can't be read, the program is aborted.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>cal_text</span>
+      
+      
+      
+        &mdash;
+        the calendar text
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Vpim::Icalendar</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        an Icalendar object if the string was loaded successfully
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110
+111
+112
+113
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='id load'>load</span><span class='lparen'>(</span><span class='id cal_text'>cal_text</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='const'>RiCal</span><span class='period'>.</span><span class='id parse_string'>parse_string</span><span class='lparen'>(</span><span class='id cal_text'>cal_text</span><span class='rparen'>)</span><span class='period'>.</span><span class='id first'>first</span>
+  <span class='kw'>rescue</span> <span class='const'>InvalidEncodingError</span> <span class='op'>=&gt;</span> <span class='id e'>e</span>
+    <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id write'>write</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Could not parse ICalendar, aborting.\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id exit'>exit</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parseopts-instance_method">
+  
+    - (<tt>OpenStruct</tt>) <strong>parseopts</strong>(args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Parses the command line options.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+        <span class='name'>args</span>
+      
+      
+      
+        &mdash;
+        the command line arguments
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>OpenStruct</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        an options object
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id parseopts'>parseopts</span><span class='lparen'>(</span><span class='id args'>args</span><span class='rparen'>)</span>
+  <span class='id default_opts'>default_opts</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='symbol'>:lead</span> <span class='op'>=&gt;</span> <span class='int'>3</span><span class='comma'>,</span>
+    <span class='symbol'>:heading</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='symbol'>:todos</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='symbol'>:dtend_rfc</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='symbol'>:debug</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+    <span class='symbol'>:config</span> <span class='op'>=&gt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>..</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>.ical2rem.yaml</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+  <span class='id cl_opts'>cl_opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id opts'>opts</span> <span class='op'>=</span> <span class='const'>OptionParser</span><span class='period'>.</span><span class='id new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id opts'>opts</span><span class='op'>|</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: </span><span class='embexpr_beg'>#{</span><span class='kw'>__FILE__</span><span class='rbrace'>}</span><span class='tstring_content'> [options] &lt; input-file [&gt; output-file]</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id separator'>separator</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--label LABEL</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Calendar name</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id label'>label</span><span class='op'>|</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id label'>label</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--lead-time LEAD</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Advance days to start reminders</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id lead'>lead</span><span class='op'>|</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:lead</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id lead'>lead</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-t</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--todos</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Process TODOs?</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:todos</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--heading HEADING</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Define a priority for static entries</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id heading'>heading</span><span class='op'>|</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:heading</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id heading'>heading</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-t</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--todos</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Process TODOs?</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:todos</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-c</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--config-file FILE</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Use config file FILE (default: </span><span class='embexpr_beg'>#{</span><span class='id default_opts'>default_opts</span><span class='lbracket'>[</span><span class='symbol'>:config</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id config'>config</span><span class='op'>|</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:config</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id config'>config</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-d</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--debug</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show debug info</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:debug</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--help</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show this help</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id puts'>puts</span> <span class='id opts'>opts</span>
+      <span class='id exit'>exit</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id opts'>opts</span><span class='period'>.</span><span class='id parse!'>parse!</span>
+  <span class='comment'># Load options from config file
+</span>  <span class='kw'>if</span> <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:config</span><span class='rbracket'>]</span>
+    <span class='id configfile_opts'>configfile_opts</span> <span class='op'>=</span> <span class='const'>YAML</span><span class='period'>.</span><span class='id load'>load</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id open'>open</span><span class='lparen'>(</span><span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:config</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id configfile_opts'>configfile_opts</span> <span class='op'>=</span> <span class='const'>YAML</span><span class='period'>.</span><span class='id load'>load</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id open'>open</span><span class='lparen'>(</span><span class='id default_opts'>default_opts</span><span class='lbracket'>[</span><span class='symbol'>:config</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='comment'># Check if the config file was empty
+</span>  <span class='kw'>if</span> <span class='id configfile_opts'>configfile_opts</span>
+    <span class='id options'>options</span> <span class='op'>=</span> <span class='id default_opts'>default_opts</span><span class='period'>.</span><span class='id update'>update</span><span class='lparen'>(</span><span class='id configfile_opts'>configfile_opts</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id options'>options</span> <span class='op'>=</span> <span class='id default_opts'>default_opts</span>
+  <span class='kw'>end</span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id update'>update</span><span class='lparen'>(</span><span class='id cl_opts'>cl_opts</span><span class='rparen'>)</span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='const'>OpenStruct</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id options'>options</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="run-instance_method">
+  
+    - (<tt>Object</tt>) <strong>run</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Start the conversion by parsing the command line options and running the
+events_to_remind() and possibly the todos_to_remind() methods.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id run'>run</span>
+  <span class='ivar'>@options</span> <span class='op'>=</span> <span class='id parseopts'>parseopts</span><span class='lparen'>(</span><span class='const'>ARGV</span><span class='rparen'>)</span>
+  <span class='ivar'>@debug</span> <span class='op'>=</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id debug'>debug</span>
+  <span class='id p'>p</span> <span class='ivar'>@options</span> <span class='kw'>if</span> <span class='ivar'>@debug</span>
+  <span class='id cal'>cal</span> <span class='op'>=</span> <span class='id load'>load</span><span class='lparen'>(</span><span class='gvar'>$stdin</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id todos'>todos</span>
+    <span class='id todos_to_remind'>todos_to_remind</span><span class='lparen'>(</span><span class='id cal'>cal</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id events_to_remind'>events_to_remind</span><span class='lparen'>(</span><span class='id cal'>cal</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="same_day?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>same_day?</strong>(vstart, vend) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Check if two Time objects have the same date.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Time</tt>)</span>
+      
+      
+        <span class='name'>vstart</span>
+      
+      
+      
+        &mdash;
+        The starting time object
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Time</tt>)</span>
+      
+      
+        <span class='name'>vend</span>
+      
+      
+      
+        &mdash;
+        The ending time object
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        True if the objects have the same date, False otherwise
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125
+126
+127
+128
+129
+130
+131</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 125</span>
+
+<span class='kw'>def</span> <span class='id same_day?'>same_day?</span><span class='lparen'>(</span><span class='id vstart'>vstart</span><span class='comma'>,</span> <span class='id vend'>vend</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id vstart'>vstart</span><span class='period'>.</span><span class='id year'>year</span> <span class='op'>&lt;</span> <span class='id vend'>vend</span><span class='period'>.</span><span class='id year'>year</span> <span class='op'>||</span> <span class='id vstart'>vstart</span><span class='period'>.</span><span class='id month'>month</span> <span class='op'>&lt;</span> <span class='id vend'>vend</span><span class='period'>.</span><span class='id month'>month</span> <span class='op'>||</span> <span class='id vstart'>vstart</span><span class='period'>.</span><span class='id day'>day</span> <span class='op'>&lt;</span> <span class='id vend'>vend</span><span class='period'>.</span><span class='id day'>day</span>
+    <span class='kw'>return</span> <span class='kw'>false</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="todos_to_remind-instance_method">
+  
+    - (<tt>Object</tt>) <strong>todos_to_remind</strong>(cal) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Converts the ICalendar TODOs to Remind syntax, writing everything to STDOUT.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>RiCal::Component::Calendar</tt>)</span>
+      
+      
+        <span class='name'>cal</span>
+      
+      
+      
+        &mdash;
+        the calendar to convert
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 218</span>
+
+<span class='kw'>def</span> <span class='id todos_to_remind'>todos_to_remind</span><span class='lparen'>(</span><span class='id cal'>cal</span><span class='rparen'>)</span>
+
+  <span class='comment'># The heading of the calendar file, e.g.
+</span>  <span class='comment'># REM MSG Calendar Events:%&quot;%&quot;%
+</span>  <span class='kw'>if</span> <span class='kw'>not</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id heading'>heading</span><span class='period'>.</span><span class='id empty?'>empty?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id label'>label</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REM </span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id heading'>heading</span><span class='rbrace'>}</span><span class='tstring_content'> MSG </span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id label'>label</span><span class='rbrace'>}</span><span class='tstring_content'> ToDos:%\&quot;%\&quot;%</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id cal'>cal</span><span class='period'>.</span><span class='id todos'>todos</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id todo'>todo</span><span class='op'>|</span>
+    <span class='comment'># Check for the task already being completed and skip it if true
+</span>    <span class='kw'>if</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id status'>status</span> <span class='kw'>and</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>COMPLETED</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>next</span>
+    <span class='kw'>else</span>
+      <span class='comment'># The due time is either set in the +todo+ with the +DUE+ value or set
+</span>      <span class='comment'># to +DTSTART+. If both do not exist, set +due+ to now.
+</span>      <span class='id due'>due</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span>
+      <span class='kw'>if</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id due'>due</span>
+        <span class='id due'>due</span> <span class='op'>=</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id due'>due</span><span class='period'>.</span><span class='id to_time'>to_time</span><span class='period'>.</span><span class='id getlocal'>getlocal</span>
+      <span class='kw'>elsif</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id dtstart'>dtstart</span>
+        <span class='id due'>due</span> <span class='op'>=</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id to_time'>to_time</span><span class='period'>.</span><span class='id getlocal'>getlocal</span>
+      <span class='kw'>end</span>
+      <span class='comment'># If a priority is given (in icalendar syntax from 1-9), convert it to
+</span>      <span class='comment'># remind syntax (0 - 9999).
+</span>      <span class='id priority'>priority</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>if</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id priority'>priority</span>
+        <span class='id priority'>priority</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id todo'>todo</span><span class='period'>.</span><span class='id priority'>priority</span> <span class='op'>*</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+      <span class='kw'>end</span>
+      <span class='comment'># Lead time is the duration of the task plus the default lead time.
+</span>      <span class='id lead'>lead</span> <span class='op'>=</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id lead'>lead</span>
+      <span class='kw'>if</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id dtstart'>dtstart</span> <span class='kw'>and</span> <span class='id todo'>todo</span><span class='period'>.</span><span class='id due'>due</span>
+        <span class='id dt_start'>dt_start</span> <span class='op'>=</span> <span class='const'>DateTime</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id todo'>todo</span><span class='period'>.</span><span class='id dtstart'>dtstart</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span>
+        <span class='id dt_due'>dt_due</span> <span class='op'>=</span> <span class='const'>DateTime</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id todo'>todo</span><span class='period'>.</span><span class='id due'>due</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span>
+        <span class='id diff'>diff</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id dt_due'>dt_due</span> <span class='op'>-</span> <span class='id dt_start'>dt_start</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_i'>to_i</span>
+        <span class='id lead'>lead</span> <span class='op'>=</span> <span class='id diff'>diff</span> <span class='op'>+</span> <span class='ivar'>@options</span><span class='period'>.</span><span class='id lead'>lead</span>
+      <span class='kw'>end</span>
+      <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REM </span><span class='embexpr_beg'>#{</span><span class='id due'>due</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id due'>due</span><span class='period'>.</span><span class='id day'>day</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id due'>due</span><span class='period'>.</span><span class='id year'>year</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id lead'>lead</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id priority'>priority</span><span class='rbrace'>}</span><span class='tstring_content'> MSG \%a %\&quot;</span><span class='embexpr_beg'>#{</span><span class='id todo'>todo</span><span class='period'>.</span><span class='id summary'>summary</span><span class='rbrace'>}</span><span class='tstring_content'>\%\&quot;\%\&quot;\%</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Apr 11 14:07:01 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.9.1).
+</div>
+
+  </body>
+</html>

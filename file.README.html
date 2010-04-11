@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Documentation by YARD 0.5.3</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><p>Author:      Patrick Hof <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x63;&#111;&#117;&#114;&#x74;&#115;&#x40;&#x6f;&#x66;&#102;&#101;&#x6e;&#115;&#105;&#118;&#101;&#x74;&#104;&#x69;&#110;&#x6b;&#105;&#x6e;&#x67;&#x2e;&#111;&#x72;&#103;">&#99;&#111;&#117;&#x72;&#116;&#115;&#x40;&#x6f;&#x66;&#102;&#101;&#110;&#x73;&#105;&#118;&#x65;&#x74;&#104;&#x69;&#110;&#107;&#105;&#110;&#103;&#46;&#111;&#x72;&#x67;</a><br/>
+Copyright:   Copyright (C) 2008 Patrick Hof<br/>
+License:     GPLv3<br/>
+</p>
+
+<p>Download:    git clone git://github.com/courts/ical2rem.rb.git<br/>
+YARD docs:   <a href="http://courts.github.com/ical2rem.rb">http://courts.github.com/ical2rem.rb</a></p>
+
+<p><code>ical2rem.rb</code> is based on the Perl program
+<a href="http://wiki.43folders.com/index.php/ICal2Rem"><code>ical2rem.pl</code></a> by Justin B.
+Alcorn . It converts an <em>iCalendar</em> file's <code>VEVENT</code> and <code>VTODO</code> components to
+<a href="http://www.roaringpenguin.com/products/remind"><em>Remind</em></a> syntax. You should be
+able to use it as a drop-in replacement for <code>ical2rem.pl</code> with only minor
+modifications. The command line client which comes with ical2rem.rb is called
+<code>ical2rem-cli</code> and can be found in the <code>/bin</code> directory.</p>
+
+<h1>Installation</h1>
+
+<p><code>ical2rem.rb</code> requires <a href="http://ri-cal.rubyforge.org/">RiCal</a> You can
+install it with RubyGems:</p>
+
+<pre class="code"><span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id ri_cal'>ri_cal</span>
+</pre>
+
+<p><code>ical2rem.rb</code> itself has a gemspec file, so you can easily build a gem
+and install it with:</p>
+
+<pre class="code"><span class='id gem'>gem</span> <span class='id build'>build</span> <span class='id ical2rem'>ical2rem</span><span class='period'>.</span><span class='id rb'>rb</span><span class='period'>.</span><span class='id gemspec'>gemspec</span>
+<span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id ical2rem'>ical2rem</span><span class='period'>.</span><span class='id rb'>rb</span><span class='period'>.</span><span class='op'>-</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id gem'>gem</span>
+</pre>
+
+<p>Besides that, no further installation steps are required.</p>
+
+<h1>Usage</h1>
+
+<p>You can get usage information by running <code>ical2rem-cli</code> with the
+<code>-h</code> switch:</p>
+
+<pre class="code">Usage: ical2rem-cli [options] &lt; input-file [&gt; output-file]
+        --label LABEL                Calendar name
+        --lead-time LEAD             Advance days to start reminders
+        --heading HEADING            Define a priority for static entries
+    -t, --todos                      Process TODOs?
+    -c, --config-file FILE           Use config file FILE (default: .ical2rem.yaml)
+    -d, --debug                      Show debug info
+    -h, --help                       Show this help
+</pre>
+
+<p>The configuration file (default <code>.ical2rem.yaml</code>) further explains the
+options you can supply.</p>
+
+<p><code>ical2rem-cli</code> will read any iCalendar file parseable by RiCal from
+<code>STDIN</code> and print its output to <code>STDOUT</code>.</p>
+
+<h1>Overview</h1>
+
+<p><code>ical2rem.rb</code> was mainly written because <code>ICal::Parser</code>, the iCal
+parsing library <code>ical2rem.pl</code> uses, bailed out on my 64bit Ubuntu I was
+using at the time. Also, <code>ical2rem.pl</code> does not support showing starting
+and ending times of events.</p>
+
+<p>The first version used Sam Roberts' vPim, but since it didn't work well with
+Ruby 1.9 for some time, I decided to switch to RiCal.</p>
+
+<h2>Events</h2>
+
+<p><code>ical2rem.rb</code> parses iCalendar <code>VEVENTs</code> in a similar way to
+<code>ical2rem.pl</code>, but it will also recognize <code>TIME-DATE</code> values in
+<code>DTSTART</code> and <code>DTEND</code> and add them to the output by using remind's
+<code>DURATION</code> property.</p>
+
+<h2>ToDos </h2>
+
+<p>Like <code>ical2rem.pl</code>, <code>ical2rem.rb</code> also parses iCalendar
+<code>VTODOs</code>. Unlike <code>ical2rem.pl</code>, <code>ical2rem-cli</code> will not
+parse them by default, parsing has to be enabled with the command line switch
+'-t'. At the moment, the same simple approach to parsing as in
+<code>ical2rem.pl</code> is used. This may improve in future versions.</p>
+
+<h2>Bug Reports / Feature Requests / Patches</h2>
+
+<p>Please send bug reports to my e-mail address given above. Adding
+<code>[BUG ical2rem.rb]</code> to the subject will greatly increase your chance of not
+getting stuck in my spam filter. The same goes for feature requests, including
+<code>[FEATURE ical2rem.rb]</code> would be nice.</p>
+
+<p>For patches, please send them as git patches formatted with
+<code>git-format-patch -n</code> if possible. Make sure they commit cleanly against
+the current <code>master</code> branch.</p>
+
+<p>Otherwise, at least include <code>[PATCH ical2rem.rb]</code> in your subject.</p>
+
+<h2>Thanks</h2>
+
+<ul>
+<li>Justin B. Alcorn (http://www.jalcorn.net/) for writing <code>ical2rem.pl</code></li>
+<li>Rick DeNatale for RiCal (http://ri-cal.rubyforge.org)</li>
+<li>Sam Roberts for vPim (http://vpim.rubyforge.org)</li>
+</ul>
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Apr 11 14:07:00 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.9.1).
+</div>
+
+  </body>
+</html>
