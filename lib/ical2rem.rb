@@ -21,11 +21,14 @@ require 'yaml'
 
 include RiCal
 
-# Main class in <tt>ical2rem.rb</tt>.
+# ical2rem.rb converts an _iCalendar_ file's VEVENT and VTODO components to
+# Remind syntax.
+#
+# @author Patrick Hof
 class Ical2Rem
 
   # Start the conversion by parsing the command line options and running the
-  # events_to_remind and possibly the todos_to_remind methods.
+  # events_to_remind() and possibly the todos_to_remind() methods.
   def run
     @options = parseopts(ARGV)
     @debug = @options.debug
@@ -38,7 +41,10 @@ class Ical2Rem
   end
 
 
-  # Parses the command line options and returns an +OpenStruct+ options object.
+  # Parses the command line options.
+  #
+  # @param [Array] args the command line arguments
+  # @return [OpenStruct] an options object
   def parseopts(args)
     default_opts = {
       :label => "",
@@ -97,9 +103,10 @@ class Ical2Rem
     options
   end
 
-  # Takes a string +cal_text+ as parameter and returns a
-  # <tt>Vpim::Icalendar</tt> object if the string could be loaded successfully.
-  # Will abort the program otherwise.
+  # Load a calendar text. If the text can't be read, the program is aborted.
+  #
+  # @param [String] cal_text the calendar text
+  # @return [Vpim::Icalendar] an Icalendar object if the string was loaded successfully
   def load(cal_text)
     begin
       RiCal.parse_string(cal_text).first
@@ -110,8 +117,11 @@ class Ical2Rem
   end
 
 
-  # Check if two <tt>Time</tt> objects +vstart+ and +vend+ have the same date. Returns
-  # either +true+ or +false+.
+  # Check if two Time objects have the same date.
+  #
+  # @param [Time] vstart The starting time object
+  # @param [Time] vend The ending time object
+  # @return [Boolean] True if the objects have the same date, False otherwise
   def same_day?(vstart, vend)
     if vstart.year < vend.year || vstart.month < vend.month || vstart.day < vend.day
       return false
@@ -120,7 +130,10 @@ class Ical2Rem
     end
   end
 
-  # Returns the duration of an event
+  # Returns the duration of an event.
+  #
+  # @param [RiCal::Component::Event] event The event to check the duration of
+  # @return [Int] Event duration in seconds
   def duration(event)
     return 0 unless event.dtstart and event.dtend
     # XXX Ugly hack to subtract DateTime objects, but it works..
@@ -143,7 +156,9 @@ class Ical2Rem
     end
   end
 
-  # Converts the events of _ICalendar_ +cal+ to _Remind_ syntax, writing it to +STDOUT+.
+  # Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.
+  #
+  # @param [RiCal::Component::Calendar] cal the calendar to convert
   def events_to_remind(cal)
 
     # The heading of the calendar file, e.g.
@@ -197,7 +212,9 @@ class Ical2Rem
     end
   end
 
-  # Converts the todos of _ICalendar_ +cal+ to _Remind_ syntax, writing it to +STDOUT+.
+  # Converts the ICalendar TODOs to Remind syntax, writing everything to STDOUT.
+  #
+  # @param [RiCal::Component::Calendar] cal the calendar to convert
   def todos_to_remind(cal)
 
     # The heading of the calendar file, e.g.
