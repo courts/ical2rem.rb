@@ -30,7 +30,8 @@ and install it with:
     gem build ical2rem.rb.gemspec
     gem install ical2rem.rb.-x.x.x.gem
 
-Besides that, no further installation steps are required.
+Besides that, no further installation steps are required.  Note that
+ical2rem.rb only works with ruby 1.9, not 1.8.
 
 
 Usage
@@ -41,7 +42,7 @@ You can get usage information by running `ical2rem-cli` with the
 
     Usage: ical2rem-cli [options] < input-file [> output-file]
             --label LABEL                Calendar name
-            --lead-time LEAD             Advance days to start reminders
+            --lead-time LEAD             Advance minutes to start reminders
             --heading HEADING            Define a priority for static entries
         -t, --todos                      Process TODOs?
         -c, --config-file FILE           Use config file FILE (default: .ical2rem.yaml)

@@ -13,7 +13,7 @@
 ## Calendar name, e.g. 'Calendar'
 # :label: ""
 
-## Advance days to start reminders
+## Advance minutes to start reminders
 #:lead: 3
 
 ## Define a priority for static entries, e.g. 'PRIORITY 6500'

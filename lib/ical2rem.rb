@@ -62,7 +62,7 @@ class Ical2Rem
       opts.on("--label LABEL", "Calendar name") do |label|
         cl_opts[:label] = label
       end
-      opts.on("--lead-time LEAD", "Advance days to start reminders") do |lead|
+      opts.on("--lead-time LEAD", "Advance minutes to start reminders") do |lead|
         cl_opts[:lead] = lead
       end
       opts.on("-t", "--todos", "Process TODOs?") do
@@ -206,7 +206,7 @@ class Ical2Rem
         print " DURATION #{duration / 3600}:#{(duration % 3600) / 60}"
       end
 
-      # The advance days to show this entry, e.g.
+      # The advance minutes to show this entry, e.g.
       # +3
       print " +#{@options.lead}"
 
