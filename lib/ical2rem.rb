@@ -183,7 +183,19 @@ class Ical2Rem
       if event.bounded? && (event.occurrences.length > 1)
         last = event.occurrences.last.dtend
         if not same_day?(vstart, last)
-          print " UNTIL #{last.strftime("%b")} #{last.day} #{vend.year} *1"
+          print " UNTIL #{last.strftime("%b")} #{last.day} #{vend.year}"
+        end
+      end
+
+      # set up recurring event using the first recurrence rule.  only daily and
+      # weekly recurrence supported
+      if (event.rrule.length > 0)
+        interval = event.rrule_property[0].interval
+        case event.rrule_property[0].freq
+        when "DAILY"
+          print " *#{interval}"
+        when "WEEKLY"
+          print " *#{interval * 7}"
         end
       end
 
