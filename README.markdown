@@ -98,6 +98,11 @@ the current `master` branch.
 
 Otherwise, at least include `[PATCH ical2rem.rb]` in your subject.
 
+Contributors
+------------
+
+*   [Christian G. Warden](https://github.com/cwarden)
+
 Thanks
 ------
 
