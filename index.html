@@ -2,8 +2,8 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
-<title>Documentation by YARD 0.5.3</title>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.6.2</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -43,10 +43,9 @@
     
     <div id="content"><div id='filecontents'><h1>ical2rem.rb</h1>
 
-<p>Author:      Patrick Hof <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#111;&#x75;&#114;&#x74;&#x73;&#64;&#x6f;&#x66;&#x66;&#101;&#x6e;&#x73;&#x69;&#x76;&#x65;&#x74;&#x68;&#105;&#x6e;&#107;&#105;&#110;&#103;&#46;&#x6f;&#114;&#103;">&#99;&#111;&#117;&#x72;&#116;&#x73;&#x40;&#x6f;&#102;&#x66;&#x65;&#x6e;&#x73;&#x69;&#118;&#101;&#116;&#104;&#x69;&#110;&#x6b;&#105;&#x6e;&#x67;&#46;&#x6f;&#114;&#103;</a><br/>
+<p>Author:      Patrick Hof <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x63;&#x6f;&#x75;&#x72;&#116;&#115;&#64;&#111;&#102;&#102;&#x65;&#110;&#115;&#105;&#x76;&#101;&#x74;&#x68;&#105;&#x6e;&#107;&#105;&#x6e;&#x67;&#x2e;&#x6f;&#x72;&#103;">&#99;&#111;&#117;&#x72;&#x74;&#x73;&#64;&#x6f;&#102;&#x66;&#x65;&#110;&#x73;&#x69;&#118;&#101;&#x74;&#104;&#105;&#x6e;&#x6b;&#105;&#110;&#x67;&#x2e;&#x6f;&#114;&#103;</a><br/>
 Copyright:   Copyright (C) 2008 Patrick Hof<br/>
-License:     GPLv3<br/>
-</p>
+License:     GPLv3</p>
 
 <p>Download:    git clone git://github.com/courts/ical2rem.rb.git<br/>
 YARD docs:   <a href="http://courts.github.com/ical2rem.rb">http://courts.github.com/ical2rem.rb</a></p>
@@ -74,7 +73,8 @@ and install it with:</p>
 <span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id ical2rem'>ical2rem</span><span class='period'>.</span><span class='id rb'>rb</span><span class='period'>.</span><span class='op'>-</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id x'>x</span><span class='period'>.</span><span class='id gem'>gem</span>
 </pre>
 
-<p>Besides that, no further installation steps are required.</p>
+<p>Besides that, no further installation steps are required.  Note that
+ical2rem.rb only works with ruby 1.9, not 1.8.</p>
 
 <h1>Usage</h1>
 
@@ -83,7 +83,7 @@ and install it with:</p>
 
 <pre class="code">Usage: ical2rem-cli [options] &lt; input-file [&gt; output-file]
         --label LABEL                Calendar name
-        --lead-time LEAD             Advance days to start reminders
+        --lead-time LEAD             Advance minutes to start reminders
         --heading HEADING            Define a priority for static entries
     -t, --todos                      Process TODOs?
     -c, --config-file FILE           Use config file FILE (default: .ical2rem.yaml)
@@ -135,6 +135,13 @@ the current <code>master</code> branch.</p>
 
 <p>Otherwise, at least include <code>[PATCH ical2rem.rb]</code> in your subject.</p>
 
+<h2>Contributors</h2>
+
+<ul>
+<li><a href="https://github.com/cwarden">Christian G. Warden</a></li>
+</ul>
+
+
 <h2>Thanks</h2>
 
 <ul>
@@ -145,9 +152,9 @@ the current <code>master</code> branch.</p>
 </div></div>
     
     <div id="footer">
-  Generated on Sun Apr 11 14:28:23 2010 by 
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.9.1).
+  Generated on Sat Dec 25 15:28:29 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.2 (ruby-1.9.2).
 </div>
 
   </body>

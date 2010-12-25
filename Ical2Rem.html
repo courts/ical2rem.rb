@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Class: Ical2Rem</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Class: Ical2Rem 
+    <div id="content"><h1>Class: Ical2Rem
+  
   
   
 </h1>
@@ -71,6 +72,7 @@
     
   
   
+  
     <dt class="r2 last">Defined in:</dt>
     <dd class="r2 last">lib/ical2rem.rb</dd>
   
@@ -79,8 +81,11 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>ical2rem.rb converts an <em>iCalendar</em> file's VEVENT and VTODO components to
-Remind syntax.</p>
+    <p>
+ical2rem.rb converts an <em>iCalendar</em> file&#8217;s VEVENT and VTODO
+components to Remind syntax.
+</p>
+
 
   </div>
 </div>
@@ -94,7 +99,10 @@ Remind syntax.</p>
       
       
         
-        Patrick Hof
+        <div class='inline'><p>
+Patrick Hof
+</p>
+</div>
       
     </li>
   
@@ -103,11 +111,15 @@ Remind syntax.</p>
 </div>
 
 
-  <h2>Instance Method Summary</h2>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
-  <ul class="summary">
-    
-      <li class="public ">
+    <ul class="summary">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#duration-instance_method" title="#duration (instance method)">- (Int) <strong>duration</strong>(event) </a>
@@ -120,14 +132,18 @@ Remind syntax.</p>
   
   
   
+  
 
   
-    <span class="summary_desc">Returns the duration of an event.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Returns the duration of an event.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#events_to_remind-instance_method" title="#events_to_remind (instance method)">- (Object) <strong>events_to_remind</strong>(cal) </a>
@@ -140,14 +156,18 @@ Remind syntax.</p>
   
   
   
+  
 
   
-    <span class="summary_desc">Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#load-instance_method" title="#load (instance method)">- (Vpim::Icalendar) <strong>load</strong>(cal_text) </a>
@@ -160,14 +180,18 @@ Remind syntax.</p>
   
   
   
+  
 
   
-    <span class="summary_desc">Load a calendar text.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Load a calendar text.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#parseopts-instance_method" title="#parseopts (instance method)">- (OpenStruct) <strong>parseopts</strong>(args) </a>
@@ -180,14 +204,18 @@ Remind syntax.</p>
   
   
   
+  
 
   
-    <span class="summary_desc">Parses the command line options.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Parses the command line options.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#run-instance_method" title="#run (instance method)">- (Object) <strong>run</strong> </a>
@@ -200,15 +228,19 @@ Remind syntax.</p>
   
   
   
+  
 
   
-    <span class="summary_desc">Start the conversion by parsing the command line options and running the
-events_to_remind() and possibly the todos_to_remind() methods.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Start the conversion by parsing the command line options and running the
+events_to_remind() and possibly the todos_to_remind() methods.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#same_day%3F-instance_method" title="#same_day? (instance method)">- (Boolean) <strong>same_day?</strong>(vstart, vend) </a>
@@ -221,14 +253,18 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
   
   
+  
 
   
-    <span class="summary_desc">Check if two Time objects have the same date.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Check if two Time objects have the same date.
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#todos_to_remind-instance_method" title="#todos_to_remind (instance method)">- (Object) <strong>todos_to_remind</strong>(cal) </a>
@@ -241,14 +277,21 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
   
   
+  
 
   
-    <span class="summary_desc">Converts the ICalendar TODOs to Remind syntax, writing everything to STDOUT.</span>
+    <span class="summary_desc"><div class='inline'><p>
+Converts the ICalendar TODOs to Remind syntax, writing everything to
+STDOUT.
+</p>
+</div></span>
   
 </li>
 
-    
-  </ul>
+      
+    </ul>
+  
+
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -264,7 +307,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Returns the duration of an event.</p>
+    <p>
+Returns the duration of an event.
+</p>
+
 
   </div>
 </div>
@@ -282,7 +328,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        The event to check the duration of
+        <div class='inline'><p>
+The event to check the duration of
+</p>
+</div>
       
     </li>
   
@@ -298,7 +347,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        Event duration in seconds
+        <div class='inline'><p>
+Event duration in seconds
+</p>
+</div>
       
     </li>
   
@@ -370,7 +422,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.</p>
+    <p>
+Converts the ICalendar EVENTs Remind syntax, writing everything to STDOUT.
+</p>
+
 
   </div>
 </div>
@@ -388,7 +443,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        the calendar to convert
+        <div class='inline'><p>
+the calendar to convert
+</p>
+</div>
       
     </li>
   
@@ -451,7 +509,19 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
 210
 211
 212
-213</pre>
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 162</span>
@@ -480,7 +550,19 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
     <span class='kw'>if</span> <span class='id event'>event</span><span class='period'>.</span><span class='id bounded?'>bounded?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id occurrences'>occurrences</span><span class='period'>.</span><span class='id length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span><span class='rparen'>)</span>
       <span class='id last'>last</span> <span class='op'>=</span> <span class='id event'>event</span><span class='period'>.</span><span class='id occurrences'>occurrences</span><span class='period'>.</span><span class='id last'>last</span><span class='period'>.</span><span class='id dtend'>dtend</span>
       <span class='kw'>if</span> <span class='kw'>not</span> <span class='id same_day?'>same_day?</span><span class='lparen'>(</span><span class='id vstart'>vstart</span><span class='comma'>,</span> <span class='id last'>last</span><span class='rparen'>)</span>
-        <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> UNTIL </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id day'>day</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id vend'>vend</span><span class='period'>.</span><span class='id year'>year</span><span class='rbrace'>}</span><span class='tstring_content'> *1</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> UNTIL </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id last'>last</span><span class='period'>.</span><span class='id day'>day</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id vend'>vend</span><span class='period'>.</span><span class='id year'>year</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># set up recurring event using the first recurrence rule.  only daily and
+</span>    <span class='comment'># weekly recurrence supported
+</span>    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id event'>event</span><span class='period'>.</span><span class='id rrule'>rrule</span><span class='period'>.</span><span class='id length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span><span class='rparen'>)</span>
+      <span class='id interval'>interval</span> <span class='op'>=</span> <span class='id event'>event</span><span class='period'>.</span><span class='id rrule_property'>rrule_property</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id interval'>interval</span>
+      <span class='kw'>case</span> <span class='id event'>event</span><span class='period'>.</span><span class='id rrule_property'>rrule_property</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id freq'>freq</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DAILY</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> *</span><span class='embexpr_beg'>#{</span><span class='id interval'>interval</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>WEEKLY</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> *</span><span class='embexpr_beg'>#{</span><span class='id interval'>interval</span> <span class='op'>*</span> <span class='int'>7</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
 
@@ -491,7 +573,7 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> DURATION </span><span class='embexpr_beg'>#{</span><span class='id duration'>duration</span> <span class='op'>/</span> <span class='int'>3600</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='lparen'>(</span><span class='id duration'>duration</span> <span class='op'>%</span> <span class='int'>3600</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>60</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
 
-    <span class='comment'># The advance days to show this entry, e.g.
+    <span class='comment'># The advance minutes to show this entry, e.g.
 </span>    <span class='comment'># +3
 </span>    <span class='id print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> +</span><span class='embexpr_beg'>#{</span><span class='ivar'>@options</span><span class='period'>.</span><span class='id lead'>lead</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
 
@@ -522,7 +604,11 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Load a calendar text. If the text can't be read, the program is aborted.</p>
+    <p>
+Load a calendar text. If the text can&#8217;t be read, the program is
+aborted.
+</p>
+
 
   </div>
 </div>
@@ -540,7 +626,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        the calendar text
+        <div class='inline'><p>
+the calendar text
+</p>
+</div>
       
     </li>
   
@@ -556,7 +645,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        an Icalendar object if the string was loaded successfully
+        <div class='inline'><p>
+an Icalendar object if the string was loaded successfully
+</p>
+</div>
       
     </li>
   
@@ -602,7 +694,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Parses the command line options.</p>
+    <p>
+Parses the command line options.
+</p>
+
 
   </div>
 </div>
@@ -620,7 +715,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        the command line arguments
+        <div class='inline'><p>
+the command line arguments
+</p>
+</div>
       
     </li>
   
@@ -636,7 +734,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
       
       
         &mdash;
-        an options object
+        <div class='inline'><p>
+an options object
+</p>
+</div>
       
     </li>
   
@@ -726,7 +827,7 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
     <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--label LABEL</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Calendar name</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id label'>label</span><span class='op'>|</span>
       <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id label'>label</span>
     <span class='kw'>end</span>
-    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--lead-time LEAD</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Advance days to start reminders</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id lead'>lead</span><span class='op'>|</span>
+    <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--lead-time LEAD</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Advance minutes to start reminders</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id lead'>lead</span><span class='op'>|</span>
       <span class='id cl_opts'>cl_opts</span><span class='lbracket'>[</span><span class='symbol'>:lead</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id lead'>lead</span>
     <span class='kw'>end</span>
     <span class='id opts'>opts</span><span class='period'>.</span><span class='id on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-t</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--todos</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Process TODOs?</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
@@ -780,8 +881,11 @@ events_to_remind() and possibly the todos_to_remind() methods.</span>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Start the conversion by parsing the command line options and running the
-events_to_remind() and possibly the todos_to_remind() methods.</p>
+    <p>
+Start the conversion by parsing the command line options and running the
+events_to_remind() and possibly the todos_to_remind() methods.
+</p>
+
 
   </div>
 </div>
@@ -831,7 +935,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Check if two Time objects have the same date.</p>
+    <p>
+Check if two Time objects have the same date.
+</p>
+
 
   </div>
 </div>
@@ -849,7 +956,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
       
       
         &mdash;
-        The starting time object
+        <div class='inline'><p>
+The starting time object
+</p>
+</div>
       
     </li>
   
@@ -863,7 +973,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
       
       
         &mdash;
-        The ending time object
+        <div class='inline'><p>
+The ending time object
+</p>
+</div>
       
     </li>
   
@@ -879,7 +992,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
       
       
         &mdash;
-        True if the objects have the same date, False otherwise
+        <div class='inline'><p>
+True if the objects have the same date, False otherwise
+</p>
+</div>
       
     </li>
   
@@ -923,7 +1039,11 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Converts the ICalendar TODOs to Remind syntax, writing everything to STDOUT.</p>
+    <p>
+Converts the ICalendar TODOs to Remind syntax, writing everything to
+STDOUT.
+</p>
+
 
   </div>
 </div>
@@ -941,7 +1061,10 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
       
       
         &mdash;
-        the calendar to convert
+        <div class='inline'><p>
+the calendar to convert
+</p>
+</div>
       
     </li>
   
@@ -953,18 +1076,6 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
       <pre class="lines">
 
 
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
 230
 231
 232
@@ -991,10 +1102,22 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
 253
 254
 255
-256</pre>
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'lib/ical2rem.rb', line 230</span>
 
 <span class='kw'>def</span> <span class='id todos_to_remind'>todos_to_remind</span><span class='lparen'>(</span><span class='id cal'>cal</span><span class='rparen'>)</span>
 
@@ -1045,9 +1168,9 @@ events_to_remind() and possibly the todos_to_remind() methods.</p>
 </div>
     
     <div id="footer">
-  Generated on Sun Apr 11 14:28:24 2010 by 
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.9.1).
+  Generated on Sat Dec 25 15:28:29 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.2 (ruby-1.9.2).
 </div>
 
   </body>
