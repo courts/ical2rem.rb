@@ -136,11 +136,8 @@ class Ical2Rem
   # @return [Int] Event duration in seconds
   def duration(event)
     return 0 unless event.dtstart and event.dtend
-    # XXX Ugly hack to subtract DateTime objects, but it works..
     if event.dtstart.class == DateTime && event.dtend.class == DateTime
-      days = (event.dtend.to_date - event.dtstart.to_date).to_i * 24 * 60 * 60
-      hours = (event.dtend.to_time - event.dtstart.to_time).to_i
-      d = days + hours 
+      d = (event.dtend.to_time - event.dtstart.to_time).to_i
     # Date object subtractions gives us days, so we need to multiply to get
     # seconds
     elsif event.dtstart.class == Date && event.dtend.class == Date
