@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Patrick Hof"]
   s.email = %q{courts@offensivethinking.org}
-  s.files = [".ical2rem.yaml", "COPYING", "README.markdown", "bin/ical2rem-cli", "lib/ical2rem.rb", "test/icals/allday_event.ics", "test/icals/recurrence.ics", "test/icals/timed_event_on_one_day.ics", "test/icals/todo_completed.ics", "test/icals/todo_needs_action.ics", "test/spec_ical2rem.rb"]
+  s.files = [".ical2rem.yaml", "COPYING", "README.md", "bin/ical2rem-cli", "lib/ical2rem.rb", "test/icals/allday_event.ics", "test/icals/recurrence.ics", "test/icals/timed_event_on_one_day.ics", "test/icals/todo_completed.ics", "test/icals/todo_needs_action.ics", "test/spec_ical2rem.rb"]
   s.homepage = %q{http://www.offensivethinking.org}
   s.require_paths = ["lib"]
   s.executables = ["ical2rem-cli"]
