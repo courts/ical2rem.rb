@@ -5,7 +5,7 @@ Author:      Patrick Hof <courts@offensivethinking.org>
 Copyright:   Copyright (C) 2008 Patrick Hof  
 License:     GPLv3  
 
-Download:    git clone git://github.com/courts/ical2rem.rb.git  
+Download:    git clone https://github.com/courts/ical2rem.rb.git  
 YARD docs:   [http://courts.github.com/ical2rem.rb](http://courts.github.com/ical2rem.rb)
 
 `ical2rem.rb` is based on the Perl program
@@ -28,7 +28,7 @@ install it with RubyGems:
 and install it with:
 
     gem build ical2rem.rb.gemspec
-    gem install ical2rem.rb.-x.x.x.gem
+    gem install ical2rem.rb-x.x.x.gem
 
 Besides that, no further installation steps are required.  Note that
 ical2rem.rb only works with ruby 1.9, not 1.8.
