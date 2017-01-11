@@ -109,7 +109,7 @@ class Ical2Rem
   # @return [Vpim::Icalendar] an Icalendar object if the string was loaded successfully
   def load(cal_text)
     begin
-      RiCal.parse_string(cal_text).first
+      RiCal.parse_string(cal_text.strip).first
     rescue InvalidEncodingError => e
       $stderr.write "Could not parse ICalendar, aborting.\n"
       exit 1
