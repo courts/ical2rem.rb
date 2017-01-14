@@ -59,6 +59,11 @@ describe Ical2Rem do
       lambda {@obj.load(cal_text)}.should raise_error(Exception)
     end
 
+    it "should load calendars with trailing whitespace" do
+      cal = @obj.load(File.open(File.dirname(__FILE__) + "/icals/outlook_mac.ics").read())
+      cal.class.should == RiCal::Component::Calendar
+    end
+
   end
 
   describe "Events to remind" do
